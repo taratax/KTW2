@@ -1,0 +1,6 @@
+framework module Pods_KTW2 {
+  umbrella header "Pods-KTW2-umbrella.h"
+
+  export *
+  module * { export * }
+}
