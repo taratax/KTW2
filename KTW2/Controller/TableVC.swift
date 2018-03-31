@@ -16,6 +16,9 @@ class TableVC: UITableViewController {
         
         super.viewDidLoad()
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 44
+        tableView.tableFooterView = UIView()
         
         self.view.backgroundColor = TColors[0]
 //        self.navigationController?.navigationBar.titleTextAttributes =
@@ -41,18 +44,11 @@ class TableVC: UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         _tab = (self.tabBarController?.selectedIndex)!
 //        print(" _tab: \(_tab) in viewDidAppear...")
-        tableView.reloadData()
+        //tableView.reloadData()
         
     }
-  
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
+
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if ( _tab == 0 ) {
             return DataService.instance.seeTabPic.count
